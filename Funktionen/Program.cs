@@ -1,46 +1,56 @@
 ﻿namespace Funktionen
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            int summe = Addiere(123, -23);
+            //Aufruf der Addiere(int,int)-Funktion
+            int summe = Addiere(3, 5);
             Console.WriteLine(summe);
 
-            double dblSumme = Addiere(2.4, 4.7);
-            Console.WriteLine(dblSumme);
+            //Aufruf der Addiere(dbl,dbl)-Funktion
+            double summe2 = Addiere(2.4, 3.6);
+            Console.WriteLine(summe2);
 
-            int differenz = Subtrahiere(100, 34, d: 45);
+            //Aufruf der Params-Funktion
+            int erg = BildeSumme(2, 4, 7, 9, 5);
 
-            summe = BildeSumme(3, 5, 7, -2, 7556, 12);
+            //Aufruf einer Funktion unter Verwendung der optionalen Parameter
+            erg = Subtrahiere(10, 5, d: 2);
 
-            summe = AddiereUndSubtrahiere(123, 43, out differenz);
-            Console.WriteLine(summe);
-            Console.WriteLine(differenz);
+            //Aufruf der Out-Funktion
+            int zahl = 5;
+            erg = AddiereUndSubtrahiere(10, zahl, out int diff);
+            //Ausgabe
+            Console.WriteLine(diff);
+            Console.WriteLine(erg);
 
 
+            //TryParse() als Bsp für Out-Verwendung
             string eingabe = Console.ReadLine();
-            if (int.TryParse(eingabe, out int geparsterWert))
+            if (int.TryParse(eingabe, out int result))
             {
-                Console.WriteLine(geparsterWert * 2);
+                result = result * 5;
             }
         }
 
+        //Jede Funktion/Methode besteht aus einem Kopf und einem Körper
+        ///Der Kopf besteht aus den MODIFIERN (public static), dem RÜCKGABEWERT (int), dem NAMEN (Addiere) sowie den ÜBERGABEPARAMETERN
         static int Addiere(int a, int b)
         {
+            //Der RETURN-Befehl weist die Methode an einen Wert als Rückgabewert an den Aufrufe zurückzugeben
             return a + b;
         }
 
+        //Funktion, welche den gleichen Bezeichner haben, nennt man ÜBERLADENE Funktionen. Diese müssen sich in Anzahl und/oder Art der 
+        ///Übergabeparameter unterscheiden, damit der Aufruf eindeutig ist.
         static double Addiere(double a, double b)
         {
             return a + b;
         }
 
-        static int Subtrahiere(int a, int b, int c = 0, int d = 0)
-        {
-            return a - b - c - d;
-        }
-
+        //Das PARAMS-Stichwort erlaubt die Übergabe einer beliebige Anzahl von gleichartigen Daten, welche innerhalb
+        //der Methode als Array interpretiert werden
         static int BildeSumme(params int[] summanden)
         {
             int summe = 0;
@@ -53,12 +63,19 @@
             return summe;
         }
 
-        static int AddiereUndSubtrahiere(int a, int b, out int diff)
+        ///Wird einem Parameter mittels =-Zeichen ein Defaultwert zugewiesen wird dieser Parameter OPTIONAL und muss bei Aufruf nicht zwangs-
+        ///läufig mitgegeben werden. OPTIONALE Parameter müssen am Ende der Parameter stehen.
+        static int Subtrahiere(int a, int b, int c = 0, int d = 0)
         {
-            diff = a - b;
-
-            return a + b;
+            return a - b - c - d;
         }
 
+        //Das OUT-Stichwort ermöglich einer Methode mehr als einen Rückgabewert zu haben. Dabei kann die Variable direkt in der Funktions-
+        ///übergabe deklariert werden
+        static int AddiereUndSubtrahiere(int a, int b, out int differenz)
+        {
+            differenz = a - b;
+            return a + b;
+        }
     }
 }

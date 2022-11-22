@@ -13,9 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L03_Schaltjahrrechner_MiniL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M04_Schleifen_Enums", "Schleifen_Enums\M04_Schleifen_Enums.csproj", "{706448B4-240F-4896-B2D4-9766D2F8FC82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L04_Taschenrechner", "Taschenrechner\L04_Taschenrechner.csproj", "{6C47009D-6AA8-47E7-995A-E999F418D962}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L04f_Taschenrechner", "Taschenrechner\L04f_Taschenrechner.csproj", "{6C47009D-6AA8-47E7-995A-E999F418D962}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Funktionen", "Funktionen\Funktionen.csproj", "{8F8F3B0A-3FDD-42F7-B496-5EDDB8360778}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M05_Funktionen", "Funktionen\M05_Funktionen.csproj", "{8F8F3B0A-3FDD-42F7-B496-5EDDB8360778}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP_Beispiel", "OOP_Beipspiel\OOP_Beispiel.csproj", "{724428A0-F8B9-49A6-AE10-CB866B941627}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teste_OOP", "Teste_OOP\Teste_OOP.csproj", "{6B98FCE4-0856-4A8E-88C3-272B69F64166}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,14 @@ Global
 		{8F8F3B0A-3FDD-42F7-B496-5EDDB8360778}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F8F3B0A-3FDD-42F7-B496-5EDDB8360778}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F8F3B0A-3FDD-42F7-B496-5EDDB8360778}.Release|Any CPU.Build.0 = Release|Any CPU
+		{724428A0-F8B9-49A6-AE10-CB866B941627}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{724428A0-F8B9-49A6-AE10-CB866B941627}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{724428A0-F8B9-49A6-AE10-CB866B941627}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{724428A0-F8B9-49A6-AE10-CB866B941627}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B98FCE4-0856-4A8E-88C3-272B69F64166}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B98FCE4-0856-4A8E-88C3-272B69F64166}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B98FCE4-0856-4A8E-88C3-272B69F64166}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B98FCE4-0856-4A8E-88C3-272B69F64166}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
