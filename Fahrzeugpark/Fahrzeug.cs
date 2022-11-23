@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Fahrzeugpark
 {
-    internal class Fahrzeug
+    public class Fahrzeug
     {
         #region Lab 06: Properties, Methoden, Konstruktor
 
@@ -28,7 +28,7 @@ namespace Fahrzeugpark
         }
 
         //Methode zur Ausgabe von Objektinformationen
-        public string Info()
+        public virtual string Info()
         {
             if (this.MotorLäuft)
                 return $"{this.Name} kostet {String.Format("{0:0,000}",this.Preis)}€ und fährt momentan mit {this.AktGeschwindigkeit} von maximal {this.MaxGeschwindigkeit}km/h.";

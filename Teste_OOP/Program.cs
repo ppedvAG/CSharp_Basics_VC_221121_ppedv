@@ -51,21 +51,62 @@ namespace Teste_OOP
 
             #endregion
 
+            #region Modul 08: Vererbung
 
-            Lebewesen lebewesen = new Lebewesen("Bello", "Knochen", new DateTime(2020, 3, 4), 120);
+            ////Instanziierung eines Objekts der vererbenden Klasse
+            //Lebewesen lebewesen = new Lebewesen("Bello", "Fleisch", new DateTime(2007, 4, 23), 70);
+            ////Instanziierung eines Objekts der abgeleiteten Klasse
+            //Mensch mensch = new Mensch("Anna", "Meier", "Lasagne", new DateTime(1984, 5, 6), 189);
+            //Mensch mensch2 = (Mensch)mensch.ProduziereNachwuchs("Maria");
+            ////Aufruf von Properties und Methoden, welche aus der Mutterklasse stammen
+            //Console.WriteLine(mensch.Alter);
+            //Console.WriteLine(mensch.Name);
 
-            Mensch mensch1 = new Mensch("Rainer", "Zufall", "Lasagne", new DateTime(2001, 12, 3), 197);
+            ////Aufruf einer Property der abgeleiteten Klasse
+            //Console.WriteLine(mensch.Vorname);
 
-            Console.WriteLine(mensch1.Alter);
-            Console.WriteLine(mensch1.Name);
+            ////Ausgabe der (überschriebenen) ToString()-Methoden
+            //Console.WriteLine(lebewesen);
+            //Console.WriteLine(mensch);
+            //Console.WriteLine(mensch2);
 
-            Console.WriteLine(mensch1.Vorname);
+            ////Aufruf einer Property eines abhängigen Objekts
+            //Console.WriteLine(mensch2.Mutter.Alter);
+
+            #endregion
+
+            Lebewesen lebewesen;
+            Mensch mensch = new Mensch("Anna", "Meier", "Lasagne", new DateTime(1984, 5, 6), 189);
+
+            lebewesen = mensch;
+
+            ÄndereLieblingsnahrung(lebewesen, "Pizza");
+            ÄndereLieblingsnahrung(mensch, "Pommes");
+
+            if (lebewesen.GetType() == typeof(Mensch))
+            {
+                Console.WriteLine("Lebewesen ist Mensch");
+                Mensch mensch2 = (Mensch)lebewesen;
+                Console.WriteLine(mensch2.Vorname);
+            }
+
+            if (lebewesen is Mensch)
+            {
+                Console.WriteLine("Lebewesen ist Mensch");
+                Mensch mensch2 = lebewesen as Mensch;
+                Console.WriteLine((lebewesen as Mensch).Vorname);
+            }
 
             Console.WriteLine(lebewesen.ToString());
-            Console.WriteLine(mensch1.ToString());
 
-            mensch1.ProduziereNachwuchs("Hugo");
+            lebewesen.Essen();
 
+
+        }
+
+        public static void ÄndereLieblingsnahrung(Lebewesen lebewesen, string neueNahrung)
+        {
+            lebewesen.Lieblingsnahrung = neueNahrung;
         }
     }
 }
