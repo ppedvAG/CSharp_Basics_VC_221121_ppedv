@@ -52,10 +52,10 @@
 
         //Es können mehrere Konstruktoren definiert werden, welche unterschiedliche Übergabeparameter haben (Überladung). Ein Konstruktor, der keine
         //Übergabeparameter hat, wird als Basiskonstruktor bezeichnet
-        public Lebewesen()
-        {
+        //public Lebewesen()
+        //{
 
-        }
+        //}
         #endregion
 
         #region Methoden
@@ -66,14 +66,12 @@
             this.Größe++;
         }
 
-        public Lebewesen ProduziereNachwuchs(string kindname)
+        public virtual Lebewesen ProduziereNachwuchs(string kindname)
         {
             return new Lebewesen(kindname, "Babynahrung", DateTime.Now, 30);
         }
 
         #endregion
-
-
 
         #region Destruktor
 
@@ -87,7 +85,6 @@
 
         #endregion
 
-
         #region Statische Member
 
         //STATISCHE Variablen und Methoden hängen an der Klasse selbst und nicht an instanziierten Objekten. Sie existieren demnach unabhängig von der Anzahl
@@ -100,6 +97,12 @@
         }
 
         #endregion
+
+
+        public override string ToString()
+        {
+            return $"{this.Name} mag gerne {this.Lieblingsnahrung} und hat am {this.Geburtsdatum.ToShortDateString()} Geburtstag.";
+        }
 
     }
 }

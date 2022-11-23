@@ -29,29 +29,42 @@ namespace Teste_OOP
             //Lebewesen kind = lebewesen1.ProduziereNachwuchs("Maria Schmidt");
             #endregion
 
-
             #region Modul 07: Statische Member und GC
 
-            //Variablendklaration
-            Lebewesen lebewesen;
+            ////Variablendklaration
+            //Lebewesen lebewesen;
 
-            //Schleife zur neubelegung der Variablen (um die GarbageCOllection zu demonstrieren)
-            for (int i = 0; i < 10; i++)
-            {
-                //Neuzuweisung der Varablen (alte Objekte werden derefernziert -> Destruktor wird ausgeführt)
-                lebewesen = new Lebewesen($"Lebewesen Nr. {i}", String.Empty, new DateTime(), 0);
-            }
+            ////Schleife zur neubelegung der Variablen (um die GarbageCOllection zu demonstrieren)
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    //Neuzuweisung der Varablen (alte Objekte werden derefernziert -> Destruktor wird ausgeführt)
+            //    lebewesen = new Lebewesen($"Lebewesen Nr. {i}", String.Empty, new DateTime(), 0);
+            //}
 
-            //Manueller Aufruf der GC und Programmpause, bis alle Destruktoren beendet wurden
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
+            ////Manueller Aufruf der GC und Programmpause, bis alle Destruktoren beendet wurden
+            //GC.Collect();
+            //GC.WaitForPendingFinalizers();
 
-            //Aufruf eines statischen Members der Person-Klasse
-            Console.WriteLine(Lebewesen.AnzahlAllerLebewesen);
-            Lebewesen.ZeigeAnzahlAllerLebewesen();
+            ////Aufruf eines statischen Members der Person-Klasse
+            //Console.WriteLine(Lebewesen.AnzahlAllerLebewesen);
+            //Lebewesen.ZeigeAnzahlAllerLebewesen();
 
             #endregion
 
+
+            Lebewesen lebewesen = new Lebewesen("Bello", "Knochen", new DateTime(2020, 3, 4), 120);
+
+            Mensch mensch1 = new Mensch("Rainer", "Zufall", "Lasagne", new DateTime(2001, 12, 3), 197);
+
+            Console.WriteLine(mensch1.Alter);
+            Console.WriteLine(mensch1.Name);
+
+            Console.WriteLine(mensch1.Vorname);
+
+            Console.WriteLine(lebewesen.ToString());
+            Console.WriteLine(mensch1.ToString());
+
+            mensch1.ProduziereNachwuchs("Hugo");
 
         }
     }
