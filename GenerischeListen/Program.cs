@@ -4,42 +4,51 @@
     {
         static void Main(string[] args)
         {
-            List<string> Städteliste = new List<string>()
+            //Deklaration und Initialisierung einer Liste von Strings
+            System.Collections.Generic.List<string> Städteliste = new List<string>()
             {
                 "Nürnberg",
                 "Dortmund",
                 "Bielefeld"
             };
 
+            //Hinzufügen von Listeneinträgen
             Städteliste.Add("Hamburg");
             Städteliste.Add("Berlin");
             Städteliste.Add("München");
             Städteliste.Add("Köln");
             Städteliste.Add("Düsseldorf");
 
+            //Ausgabe der Länge der Liste
             Console.WriteLine(Städteliste.Count);
 
+            //Ausgabe der 4. Listenposition
             Console.WriteLine(Städteliste[3]);
 
+            //Manipulation der 4. Listenposition
             Städteliste[3] = "Dresden";
             Console.WriteLine(Städteliste[3]);
 
+            //Schleife über die Liste
             foreach (var item in Städteliste)
             {
                 Console.WriteLine(item);
             }
 
-            Städteliste.Remove("Hamburg");
+            //Löschen des Eintrags 'Köln' (Nachfolgende Einträge rücken nach oben)
+            Städteliste.Remove("Köln");
 
+            //Deklaration und Initialisierung eines Dictionarys (Key: String, Value: Int)
+            Dictionary<string, int> Dict = new Dictionary<string, int>();
 
-            Dictionary<string, int> dict = new Dictionary<string, int>();
+            //Hinzufügen von Dictionary-Einträgen
+            Dict.Add("Hallo", 456);
+            Dict.Add("Ahoj", 5);
+            Dict.Add("Ciao", -78);
+            Dict.Add("Moin", 456);
 
-            dict.Add("Hallo", 123);
-            dict.Add("Ahoj", -2);
-            dict.Add("Moin", 666);
-            dict.Add("Ciao", 0);
-
-            Console.WriteLine(dict["Moin"]);
+            //Ausgabe des Eintrags mit Key 'Ciao'
+            Console.WriteLine(Dict["Ciao"]);
         }
     }
 }
