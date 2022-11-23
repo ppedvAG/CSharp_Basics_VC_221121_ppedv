@@ -60,7 +60,7 @@ namespace Werte_VS_Referenzen
             Console.WriteLine($"a:{a} b:{b}");
 
             //Referenztypen
-            Lebewesen lb1 = new Lebewesen() { Lieblingsnahrung = "Lasagne" };
+            Lebewesen lb1 = new Mensch() { Lieblingsnahrung = "Lasagne" };
             Lebewesen lb2 = lb1;
             Console.WriteLine($"lb1:{lb1.Lieblingsnahrung} lb2:{lb2.Lieblingsnahrung}");
             lb1.Lieblingsnahrung = "Pizza";

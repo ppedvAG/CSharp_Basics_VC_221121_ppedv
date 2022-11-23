@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace OOP_Beispiel
 {
     //Mensch erbt mittels des :-Zeichens von der Lebewesen-Klasse und übernimmt somit alle Eigenschaften und Methoden von dieser.
-    public class Mensch : Lebewesen
+    //Mensch implementiert Interfaces, welche dieser Klasse zusätzliche Eigenschaften verleihen
+    public class Mensch : Lebewesen, IArbeitend, ICloneable
     {
         //Zusätzliche Mensch-eigene Eigenschaften
         public string Vorname { get; set; }
@@ -18,6 +19,11 @@ namespace OOP_Beispiel
         public Mensch(string vorname, string nachname, string lieblingsnahrung, DateTime geburtsdatum, int größe) : base(nachname, lieblingsnahrung, geburtsdatum, größe)
         {
             this.Vorname = vorname;
+        }
+
+        public Mensch()
+        {
+
         }
 
         //Mittels OVERRIDE können Methoden der Mutterklassen, welche mit VIRTUAL markiert sind, überschrieben werden. Bei Aufruf wird die neue Methode ausgeführt.
@@ -37,9 +43,39 @@ namespace OOP_Beispiel
             return new Mensch(kindname, this.Name, "Muttermilch", DateTime.Now, 30) { Mutter = this };
         }
 
+        //Durch Mutterklasse erzwungene (weil dort abstrakte) Methode
         public override void Essen()
         {
             Console.WriteLine($"{this.Vorname} {this.Name} ißt {this.Lieblingsnahrung}.");
+        }
+
+        //Durch IArbeitend verlangte Eigenschaften
+        public int Gehalt { get; set; } = 3500;
+        public string Job { get; set; }
+
+        //Durch IArbeitend verlangte Methode
+        public void Auszahlung()
+        {
+            Console.WriteLine($"{this.Vorname} {this.Name} hat {this.Gehalt}€ für {this.Job} bekommen.");
+        }
+
+        //Durch IClonable verlangte Methode (Bsp für .NET-eigenes Interface)
+        ///Diese Methode erlaubt die Erstellung einer Kopie dieses Objekts
+        public object Clone()
+        {
+            //Durch .MemberwiseClone() werden alle Wertetypen des Originalobjekts kopiert
+            Mensch neuerMensch = (Mensch)this.MemberwiseClone();
+            //Referenzen müssen manuell neu zugewiesen werden oder ebenfalls über IClonable verfügen und durch .Clone() kopiert werden
+            neuerMensch.Mutter = this.Mutter;
+            return neuerMensch;
+        }
+
+        //Alternativ zu IClonable kann ein Kopierkonstruktor zur Dublizierung verwendet werden. Hier werden die Werte und Referenzen koiert und übertragen
+        public Mensch(Mensch alterMensch)
+        {
+            this.Vorname = alterMensch.Vorname;
+            this.Name = alterMensch.Name;
+            //...
         }
     }
 }

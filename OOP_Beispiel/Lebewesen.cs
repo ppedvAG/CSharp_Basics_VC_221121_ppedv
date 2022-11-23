@@ -1,6 +1,7 @@
 ﻿namespace OOP_Beispiel
 {
     //KLASSEN sind Vorlagen für Objekte. Sie bestimmen Eigenschaften und Funktionen dieser.
+    //ABSTRACT definiert eine Klasse als abstrakt. D.h. von dieser Klasse können keine Objekte mehr instanziiert werden, sie dient nur noch als Mutterklasse
     public abstract class Lebewesen //zur Verwendung vgl. Program.cs
     {
         #region Felder und Eigenschaften
@@ -52,10 +53,10 @@
 
         //Es können mehrere Konstruktoren definiert werden, welche unterschiedliche Übergabeparameter haben (Überladung). Ein Konstruktor, der keine
         //Übergabeparameter hat, wird als Basiskonstruktor bezeichnet
-        //public Lebewesen()
-        //{
+        public Lebewesen()
+        {
 
-        //}
+        }
         #endregion
 
         #region Methoden
@@ -106,6 +107,8 @@
             return $"{this.Name} mag gerne {this.Lieblingsnahrung} und hat am {this.Geburtsdatum.ToShortDateString()} Geburtstag.";
         }
 
+        //Abstrakte Methoden dürfen nur in abstrakten Klassen existieren und definieren nur
+        ///eine Signatur. Die erbenden Klassen werden gezwungen eine Implementierung vorzunehmen
         public abstract void Essen();
 
     }

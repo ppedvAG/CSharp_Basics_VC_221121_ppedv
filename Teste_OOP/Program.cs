@@ -75,38 +75,86 @@ namespace Teste_OOP
 
             #endregion
 
-            Lebewesen lebewesen;
-            Mensch mensch = new Mensch("Anna", "Meier", "Lasagne", new DateTime(1984, 5, 6), 189);
+            #region Modul 09: Polymorphismus
 
-            lebewesen = mensch;
+            ////Deklaration einer Bsp-Variablen
+            //Lebewesen lebewesen;
+            ////Instanziierung eines Objekts der abgeleiteten Klasse
+            //Mensch mensch = new Mensch("Anna", "Meier", "Lasagne", new DateTime(1984, 5, 6), 189);
 
-            ÄndereLieblingsnahrung(lebewesen, "Pizza");
-            ÄndereLieblingsnahrung(mensch, "Pommes");
+            ////Zuweisung des abgeleiteten Objekts zu Variable der Mutterklasse
+            //lebewesen = mensch;
 
-            if (lebewesen.GetType() == typeof(Mensch))
-            {
-                Console.WriteLine("Lebewesen ist Mensch");
-                Mensch mensch2 = (Mensch)lebewesen;
-                Console.WriteLine(mensch2.Vorname);
-            }
+            ////Aufruf der unten stehenden Methode mit Übergabe eines Menschen in einem Lebewesen-Übergabeparameter
+            //ÄndereLieblingsnahrung(mensch, "Rainer");
 
-            if (lebewesen is Mensch)
-            {
-                Console.WriteLine("Lebewesen ist Mensch");
-                Mensch mensch2 = lebewesen as Mensch;
-                Console.WriteLine((lebewesen as Mensch).Vorname);
-            }
+            ////Tests des Laufzeittyps (des beinhalteten Objekts)
+            //if (lebewesen.GetType() == typeof(Mensch))
+            //    Console.WriteLine("Lebewesen ist ein Mensch");
 
-            Console.WriteLine(lebewesen.ToString());
+            //if (lebewesen is Mensch)
+            //    Console.WriteLine("Lebewesen ist ein Mensch");
 
-            lebewesen.Essen();
+            ////überschriebene Methoden werden trotzdem ausgeführt
+            //Console.WriteLine(lebewesen.ToString());
 
+            //if (lebewesen is Mensch)
+            //{
+            //    //Rückcast des abgeleiteten Objekts aus Mutterklassevariablen in abgeleitete Variable
+            //    Mensch mensch2 = (Mensch)lebewesen;
+            //    //Alternativer Cast
+            //    mensch2 = lebewesen as Mensch;
+            //}
+
+            ////Aufruf einer überschriebenen Methode durch eine Basisklassenvariable (Funktion des Laufzeittypen wird ausgeführt)
+            //Console.WriteLine(lebewesen.ToString());
+
+            ////Aufruf einer abstrakten Methode
+            //lebewesen.Essen();
+
+            #endregion
+
+            #region Modul 10: Interfaces
+
+            //Instanziierung eines Beispiel-Objekts
+            Mensch mensch = new Mensch("Anna", "Meier", "Lasagne", new DateTime(1984, 5, 6), 198);
+            //Betrachtung des Objekts als Objekt des Interfaces
+            IArbeitend arbeitendesObjekt = mensch;
+            //Zugriff auf Interface-Methode
+            arbeitendesObjekt.Auszahlung();
+            //Übergabe an Methode, welche ein Objekt des Interfaces erwartet
+            Gehaltserhöhung(arbeitendesObjekt);
+            //Übergabe benötigt keinen Cast aus implementierender Klasse
+            Gehaltserhöhung(mensch);
+
+            //Aufruf der Clone()-Funktion des IClonable-Interfaces
+            Mensch kopierterMensch = (Mensch)mensch.Clone();
+            #endregion
 
         }
 
+        #region Modul 10: Interfaces
+        //Bsp-Methode, welche ein Objekt vom Typ des Interfaces verlangt
+        public static void Gehaltserhöhung(IArbeitend arbeitendesObjekt)
+        {
+            arbeitendesObjekt.Gehalt += 100;
+
+            //Prüfung des Objekts auf Laufzeittyp
+            if (arbeitendesObjekt is Mensch)
+            {
+                //Cast
+                Mensch mensch = (Mensch)arbeitendesObjekt;
+                mensch.Essen();
+            }
+        }
+        #endregion
+
+        #region Modul 09: Polymorphismus
+        //Bsp-Methode für Übergabe eines Lebewesens (kann auch spezifische, abgeleitete Objekte, z.B. Mensch, empfangen)
         public static void ÄndereLieblingsnahrung(Lebewesen lebewesen, string neueNahrung)
         {
             lebewesen.Lieblingsnahrung = neueNahrung;
         }
+        #endregion
     }
 }

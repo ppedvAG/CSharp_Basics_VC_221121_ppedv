@@ -13,17 +13,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L03_Schaltjahrrechner_MiniL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M04_Schleifen_Enums", "Schleifen_Enums\M04_Schleifen_Enums.csproj", "{706448B4-240F-4896-B2D4-9766D2F8FC82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L04f_Taschenrechner", "Taschenrechner\L04f_Taschenrechner.csproj", "{6C47009D-6AA8-47E7-995A-E999F418D962}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L04f_Taschenrechner", "Taschenrechner\L04f_Taschenrechner.csproj", "{6C47009D-6AA8-47E7-995A-E999F418D962}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M05_Funktionen", "Funktionen\M05_Funktionen.csproj", "{8F8F3B0A-3FDD-42F7-B496-5EDDB8360778}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M05_Funktionen", "Funktionen\M05_Funktionen.csproj", "{8F8F3B0A-3FDD-42F7-B496-5EDDB8360778}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M06f_Teste_OOP", "Teste_OOP\M06f_Teste_OOP.csproj", "{6B98FCE4-0856-4A8E-88C3-272B69F64166}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M06f_Teste_OOP", "Teste_OOP\M06f_Teste_OOP.csproj", "{6B98FCE4-0856-4A8E-88C3-272B69F64166}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M06f_OOP_Beispiel", "OOP_Beispiel\M06f_OOP_Beispiel.csproj", "{8153C578-23D1-4621-8ED7-A9364A6AC508}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L06f_Fahrzeugpark", "Fahrzeugpark\L06f_Fahrzeugpark.csproj", "{1323A64C-D085-489F-9D73-E340848117D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L06f_Fahrzeugpark", "Fahrzeugpark\L06f_Fahrzeugpark.csproj", "{1323A64C-D085-489F-9D73-E340848117D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M07_Werte_VS_Referenzen", "Werte_VS_Referenzen\M07_Werte_VS_Referenzen.csproj", "{073DA2CD-7CD2-4977-BA83-1E4F1CC7C98E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "M07_Werte_VS_Referenzen", "Werte_VS_Referenzen\M07_Werte_VS_Referenzen.csproj", "{073DA2CD-7CD2-4977-BA83-1E4F1CC7C98E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerischeListen", "GenerischeListen\GenerischeListen.csproj", "{D277399B-9067-4982-B5DA-87B21C1E48A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{073DA2CD-7CD2-4977-BA83-1E4F1CC7C98E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{073DA2CD-7CD2-4977-BA83-1E4F1CC7C98E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{073DA2CD-7CD2-4977-BA83-1E4F1CC7C98E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D277399B-9067-4982-B5DA-87B21C1E48A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D277399B-9067-4982-B5DA-87B21C1E48A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D277399B-9067-4982-B5DA-87B21C1E48A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D277399B-9067-4982-B5DA-87B21C1E48A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
