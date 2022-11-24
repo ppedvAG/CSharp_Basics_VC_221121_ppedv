@@ -33,9 +33,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M12_UnitTests", "UnitTests\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L12_Fehlersuche", "Fehlersuche\L12_Fehlersuche.csproj", "{A5771E62-C1C0-4913-9B1B-B4FDE6467FC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegates", "Delegates\Delegates.csproj", "{573CE3D9-1448-49C9-8BAC-9C614C398A68}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M13_Delegates", "Delegates\M13_Delegates.csproj", "{573CE3D9-1448-49C9-8BAC-9C614C398A68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI-Beispiel", "GUI-Beispiel\GUI-Beispiel.csproj", "{1C4DCC0F-E05B-47FF-98E1-24D46F214161}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M14_GUI-Beispiel", "GUI-Beispiel\M14_GUI-Beispiel.csproj", "{1C4DCC0F-E05B-47FF-98E1-24D46F214161}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L14_FahrzeugGUI", "FahrzeugGUI\L14_FahrzeugGUI.csproj", "{BC457486-11EE-4E6A-ACA8-2F1DB1B17FE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M15_Dateizugriff", "Dateizugriff\M15_Dateizugriff.csproj", "{B27445BB-E476-4802-8DFA-6347525F9439}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +115,14 @@ Global
 		{1C4DCC0F-E05B-47FF-98E1-24D46F214161}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C4DCC0F-E05B-47FF-98E1-24D46F214161}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C4DCC0F-E05B-47FF-98E1-24D46F214161}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC457486-11EE-4E6A-ACA8-2F1DB1B17FE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC457486-11EE-4E6A-ACA8-2F1DB1B17FE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC457486-11EE-4E6A-ACA8-2F1DB1B17FE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC457486-11EE-4E6A-ACA8-2F1DB1B17FE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B27445BB-E476-4802-8DFA-6347525F9439}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B27445BB-E476-4802-8DFA-6347525F9439}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B27445BB-E476-4802-8DFA-6347525F9439}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B27445BB-E476-4802-8DFA-6347525F9439}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
